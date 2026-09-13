@@ -693,7 +693,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Sumeet<span> </span>Yadav</a>
+  <a href="#" class="nav-logo">Sumeet<span>.</span>Yadav</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -1252,16 +1252,16 @@ themeToggle.addEventListener('click', () => {
     if (aboutExpYears) aboutExpYears.textContent = label;
   }
 
-  function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
   function runCountUp() {
     const target = getExperienceYears();
-    const duration = 1400;
+    const duration = 2800;
     let startTs = null;
     function frame(ts) {
       if (!startTs) startTs = ts;
       const progress = Math.min((ts - startTs) / duration, 1);
-      paint(target * easeOutExpo(progress));
+      paint(target * easeOutCubic(progress));
       if (progress < 1) requestAnimationFrame(frame);
       else paint(target); // lock in exact final value
     }
