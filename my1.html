@@ -527,6 +527,25 @@ footer{
 /* ═══════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════ */
+
+/* Universal safety nets */
+img{max-width:100%;height:auto;display:block}
+* {min-width:0}
+
+/* ── Large desktop: keep line-lengths sane on ultra-wide monitors ── */
+@media(min-width:1700px){
+  #hero,#about,#experience,#projects,#research,#kinetic,#contact,.marquee-wrap,footer,nav{
+    max-width:1800px;margin-left:auto;margin-right:auto;
+  }
+  .exp-track{max-width:1800px;margin-left:auto;margin-right:auto}
+}
+
+/* ── Tablet / small laptop ── */
+@media(max-width:1100px){
+  .bc-intro{grid-column:span 6;grid-row:span 5}
+  .bc-skills{grid-column:span 6}
+}
+
 @media(max-width:900px){
   nav{padding:1.2rem 1.5rem}
   .nav-links{display:none}
@@ -541,6 +560,65 @@ footer{
   .pj-right{align-items:flex-start}
   .exp-track{padding:0 1.5rem}
   footer{padding:1.5rem}
+}
+
+/* ── Phones (portrait & landscape) ── */
+@media(max-width:680px){
+  #hero{padding:7rem 1.25rem 3rem}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .hero-desc{max-width:none}
+  .hero-actions{flex-wrap:wrap;width:100%}
+  .hero-actions a{flex:1 1 auto;justify-content:center;text-align:center}
+
+  .bc-intro{grid-template-columns:1fr !important;min-height:auto !important}
+  .bc-intro > div:first-child{min-height:220px !important}
+
+  .kt-text{font-size:clamp(1.4rem,7.5vw,2.6rem);white-space:normal;line-height:1.15}
+  .kt-row{flex-wrap:wrap;gap:.4rem .8rem;padding:.9rem 0}
+  .kt-num{width:auto}
+  .kt-tag{margin-left:0}
+
+  .exp-card{flex:0 0 min(340px,84vw);padding:1.6rem}
+  .exp-track{gap:1rem}
+
+  .proj-h,.res-h{font-size:clamp(2rem,8vw,3rem)}
+  .pj{padding:1.5rem}
+  .pj-stack{justify-content:flex-start}
+  .pj-right{width:100%}
+
+  .ct-big{font-size:clamp(2.6rem,12vw,5rem)}
+  .ct-link{padding:.85rem 1.5rem;font-size:.62rem}
+
+  footer{flex-direction:column;text-align:center;justify-content:center}
+}
+
+/* ── Small phones ── */
+@media(max-width:420px){
+  nav{padding:1rem}
+  .nav-logo{font-size:.7rem;gap:.4rem}
+  .nav-logo-badge{width:24px;height:24px;font-size:.55rem}
+  .nav-cta{padding:.45rem 1rem;font-size:.58rem}
+
+  .hero-status{font-size:.6rem;padding:.4rem .8rem .4rem .6rem}
+  .hero-name{font-size:clamp(3.4rem,17vw,6rem)}
+  .hero-name .w2{font-size:clamp(3rem,15vw,5.5rem)}
+  .hero-desc{font-size:.92rem}
+
+  .btn-primary,.btn-ghost{padding:.8rem 1.4rem;font-size:.64rem}
+
+  .bc{padding:1rem}
+  .bc-h{font-size:1.1rem}
+
+  .exp-card-role{font-size:1.2rem}
+  .exp-card{padding:1.3rem}
+
+  .res-title{font-size:1.2rem}
+  .res-main,.res-card{padding:1.5rem}
+
+  .pj-name{font-size:1.15rem}
+
+  .ct-link{width:100%;justify-content:center}
+  .ct-row{flex-direction:column;align-items:stretch}
 }
 </style>
 </head>
